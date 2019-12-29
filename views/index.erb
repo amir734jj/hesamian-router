@@ -1,0 +1,11 @@
+<h2>
+   Hello world!
+</h2>
+
+<ul class="list-group">
+    <% pairs.each do |pair| %>
+        <li class="list-group-item">
+            <a href="<%= pair['url'] %>"><%= pair['name'] %></a> personal website
+        </li>
+    <% end %>
+</ul>
