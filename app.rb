@@ -8,8 +8,8 @@ end
 get '/' do
   erb :index, :layout => :layout, :locals => {
     :pairs => [
-      { 'url' => resolve_url('hooman'), 'name' => "Hooman Hesamian"},
-      { 'url' => resolve_url('amir'), 'name' => "Amir Hesamian"}
+      { 'url' => resolve_url('hooman'), 'name' => 'Hooman Hesamian'},
+      { 'url' => resolve_url('amir'), 'name' => 'Amir Hesamian'}
     ]
   }
 end
