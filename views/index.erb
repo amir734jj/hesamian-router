@@ -1,11 +1,33 @@
 <h2>
-   Hello world!
+   Welcome to <tt> hesamian.com </tt>
 </h2>
+
+<hr />
 
 <ul class="list-group">
     <% pairs.each do |pair| %>
         <li class="list-group-item">
-            <a href="<%= pair['url'] %>"><%= pair['name'] %></a> personal website
+            <div class='row'>
+              <div class='col-sm-6'>
+                <h3>
+                <a href="<%= pair['url'] %>"><%= pair['name'] %></a> personal website
+                </h3>
+              </div>
+              <div class='col-sm-6'>
+                <div class='pull-right'>
+
+                  <a href="<%= pair['linkedin'] %>" style='margin-right: 2rem'>
+                    <i class="icon-linkedin icon-3x"></i>
+                  </a>
+                  <a href="<%= pair['github'] %>" style='margin-right: 2rem'>
+                    <i class="icon-github icon-3x"></i>
+                  </a>
+                  <a href="<%= pair['email'] %>" style='margin-right: 2rem'>
+                    <i class="icon-pencil icon-3x"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
         </li>
     <% end %>
 </ul>
