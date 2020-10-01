@@ -7,7 +7,7 @@ def resolve_website_url name
 end
 
 resume = {
-  "amir" => {
+  "hooman" => {
     'url' => resolve_website_url('hooman'),
     'name' => 'Hooman Hesamian',
     'email' => 'mailto:hooman@hesamian.com',
@@ -17,7 +17,7 @@ resume = {
     'pdf' => 'https://docs.google.com/document/d/1WRdXjE4SV2XGeFJrxuVcg1RmHmaa01Vgey465b8jXPM/export?format=pdf',
     'filename' => 'hooman-hesamyan.pdf'
   },
-  "hooman" => {
+  "amir" => {
     'url' => resolve_website_url('amir'),
     'name' => 'Amir Hesamian',
     'email' => 'mailto:amir@hesamian.com',
