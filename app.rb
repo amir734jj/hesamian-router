@@ -15,7 +15,7 @@ resume = {
     'linkedin' => 'https://www.linkedin.com/in/hesamyan/',
     'resume' => 'resume/hooman',
     'pdf' => 'https://docs.google.com/document/d/1WRdXjE4SV2XGeFJrxuVcg1RmHmaa01Vgey465b8jXPM/export?format=pdf',
-    'filename' => 'seyedhooman-hesamyan.pdf'
+    'filename' => 'hooman-hesamyan.pdf'
   },
   "hooman" => {
     'url' => resolve_website_url('amir'),
@@ -36,9 +36,15 @@ get '/' do
 end
 
 get '/resume/:name' do |name|
+  filename = resume[name]["filename"]
   content_type 'application/octet-stream'
-  headers["Content-Disposition"] = "attachment;filename=#{@resume[name]["filename"]}"
-  RestClient.get(resume[name]["pdf"])
+  response.headers["Content-Disposition"] = "attachment;filename=#{filename}"
+
+  begin
+    RestClient.get(resume[name]["pdf"])
+  rescue
+    File.read(File.join('static', filename))
+  end
 end
 
 get '/:name' do
